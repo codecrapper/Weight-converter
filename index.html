@@ -34,24 +34,31 @@
                     </div>
                 </form>
                 <div id = "output">
-                    <div class ="card bg-primary card-header mb-1">
+                    <div id = "gramCard" class ="card bg-primary card-header mb-1">
                         <div class = "card-block">
                             <h4>Grams:</h4>
                             <div id = "gramsOutput"></div>
                         </div>
                     </div>
 
-                    <div class ="card bg-success card-header mb-1">
+                    <div id = "kilogramCard" class ="card bg-success card-header mb-1">
                         <div class = "card-block">
                             <h4>Kilograms:</h4>
                             <div id = "kgOutput"></div>
                         </div>
                     </div>
 
-                    <div class ="card bg-danger card-header mb-1">
+                    <div id = "ounceCard" class ="card bg-danger card-header mb-1">
                         <div class = "card-block">
                             <h4>Ounces:</h4>
                             <div id = "ozOutput"></div>
+                        </div>
+                    </div>
+
+                    <div id = "poundCard" class ="card bg-warning card-header mb-1">
+                        <div class = "card-block">
+                            <h4>Pounds:</h4>
+                            <div id = "lbOutput"></div>
                         </div>
                     </div>
                 </div>
@@ -59,65 +66,7 @@
         </div>
     </div>
 
-<script>
-    
-    const poundButton = document.getElementById("poundButton");
-    const gramButton = document.getElementById("gramButton");
-    const kgButton = document.getElementById("kgButton");
-    const ozButton = document.getElementById("ozButton");
-    const allButtons = document.querySelectorAll("button");
-
-    gramButton.addEventListener("click", function() {
-        document.getElementById("weightInput").value = "";
-        document.getElementById("weightInput").placeholder = "Enter Grams...";
-
-        for(let i = 0; i < allButtons.length; i++) {
-            allButtons[i].classList.remove("active");
-        }
-        gramButton.classList.add("active");
-    });
-
-    kgButton.addEventListener("click", function() {
-        document.getElementById("weightInput").value = "";
-        document.getElementById("weightInput").placeholder = "Enter Kilograms...";
-
-        for(let i = 0; i < allButtons.length; i++) {
-            allButtons[i].classList.remove("active");
-        }
-        kgButton.classList.add("active");
-    });
-
-    ozButton.addEventListener("click", function() {
-        document.getElementById("weightInput").value = "";
-        document.getElementById("weightInput").placeholder = "Enter Ounces...";
-
-        for(let i = 0; i < allButtons.length; i++) {
-            allButtons[i].classList.remove("active");
-        }
-        ozButton.classList.add("active");
-    });
-
-    poundButton.addEventListener("click", function() {
-        document.getElementById("weightInput").value = "";
-        document.getElementById("weightInput").placeholder = "Enter Pounds...";
-
-        for(let i = 0; i < allButtons.length; i++) {
-            allButtons[i].classList.remove("active");
-        }
-        poundButton.classList.add("active");
-    });
-
-
-
-    document.getElementById("output").style.visibility = "hidden";
-    document.getElementById("weightInput").addEventListener("input", function(event) {
-        document.getElementById("output").style.visibility = "visible";
-        let lbs = event.target.value;
-        document.getElementById("gramsOutput").innerHTML = lbs / 0.0022046;
-        document.getElementById("kgOutput").innerHTML = lbs / 2.2046;
-        document.getElementById("ozOutput").innerHTML = lbs * 16;
-    })
-
+<script src = "app.js">
 </script>
 </body>
 </html>
