@@ -7,6 +7,7 @@
 
     // Clicking gram button toggles to gram form/input/button
     gramButton.addEventListener("click", function() {
+        clearCardValues();
         document.getElementById("weightInput").value = "";
         document.getElementById("weightInput").placeholder = "Enter Grams...";
 
@@ -19,6 +20,7 @@
 
     // Clicking kilogram button toggles to kilogram form/input/button
     kgButton.addEventListener("click", function() {
+        clearCardValues();
         document.getElementById("weightInput").value = "";
         document.getElementById("weightInput").placeholder = "Enter Kilograms...";
 
@@ -31,6 +33,7 @@
 
     // Clicking ounce button toggles to ounce form/input/button
     ozButton.addEventListener("click", function() {
+        clearCardValues();
         document.getElementById("weightInput").value = "";
         document.getElementById("weightInput").placeholder = "Enter Ounces...";
 
@@ -43,6 +46,7 @@
 
     // Clicking pound button toggles to pound form/input/button
     poundButton.addEventListener("click", function() {
+        clearCardValues();
         document.getElementById("weightInput").value = "";
         document.getElementById("weightInput").placeholder = "Enter Pounds...";
 
@@ -52,6 +56,14 @@
         poundButton.classList.add("active");
         weightConversion.poundConversion();
     });
+
+    // Clear card values
+    function clearCardValues() {
+        document.getElementById("lbOutput").innerHTML = "";
+        document.getElementById("gramsOutput").innerHTML = "";
+        document.getElementById("kgOutput").innerHTML = "";
+        document.getElementById("ozOutput").innerHTML = "";
+    }
 
     // Weight conversion methods for different types
     let weightConversion = {
