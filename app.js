@@ -48,16 +48,18 @@
             allButtons[i].classList.remove("active");
         }
         poundButton.classList.add("active");
+        weightConversion.poundConversion();
     });
 
     // Weight conversion methods for different types
     let weightConversion = {
         poundConversion: function() {
-            document.getElementById("output").style.visibility = "hidden";
+            //document.getElementById("output").style.visibility = "hidden";
             document.getElementById("poundCard").setAttribute("hidden", true);
+            document.getElementById("gramCard").removeAttribute("hidden", true);
 
             document.getElementById("weightInput").addEventListener("input", function(event) {
-                document.getElementById("output").style.visibility = "visible";
+                //document.getElementById("output").style.visibility = "visible";
                 let lbs = event.target.value;
                 document.getElementById("gramsOutput").innerHTML = lbs / 0.0022046;
                 document.getElementById("kgOutput").innerHTML = lbs / 2.2046;
@@ -67,6 +69,13 @@
         gramConversion: function() {
             document.getElementById("gramCard").setAttribute("hidden", true);
             document.getElementById("poundCard").removeAttribute("hidden", true);
+
+            document.getElementById("weightInput").addEventListener("input", function(event) {
+                let gms = event.target.value;
+                document.getElementById("kgOutput").innerHTML = gms / 1000;
+                document.getElementById("ozOutput").innerHTML = gms * 0.035274;
+                document.getElementById("lbOutput").innerHTML = gms * 0.0022046;
+            });
         },
     };
 
