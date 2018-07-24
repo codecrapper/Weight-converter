@@ -30,7 +30,7 @@
                 </div>
                 <form>
                     <div class = "form-group">
-                        <input id = "lbsInput" type = "number" class = "form-control form-control-lg" placeholder = "Enter Pounds...">
+                        <input id = "weightInput" type = "number" class = "form-control form-control-lg" placeholder = "Enter Pounds...">
                     </div>
                 </form>
                 <div id = "output">
@@ -68,8 +68,9 @@
     const allButtons = document.querySelectorAll("button");
 
     gramButton.addEventListener("click", function() {
-        // document.getElementById("poundButton").classList.remove("active");
-        // gramButton.classList.add("active")
+        document.getElementById("weightInput").value = "";
+        document.getElementById("weightInput").placeholder = "Enter Grams...";
+
         for(let i = 0; i < allButtons.length; i++) {
             allButtons[i].classList.remove("active");
         }
@@ -77,6 +78,9 @@
     });
 
     kgButton.addEventListener("click", function() {
+        document.getElementById("weightInput").value = "";
+        document.getElementById("weightInput").placeholder = "Enter Kilograms...";
+
         for(let i = 0; i < allButtons.length; i++) {
             allButtons[i].classList.remove("active");
         }
@@ -84,6 +88,9 @@
     });
 
     ozButton.addEventListener("click", function() {
+        document.getElementById("weightInput").value = "";
+        document.getElementById("weightInput").placeholder = "Enter Ounces...";
+
         for(let i = 0; i < allButtons.length; i++) {
             allButtons[i].classList.remove("active");
         }
@@ -91,6 +98,9 @@
     });
 
     poundButton.addEventListener("click", function() {
+        document.getElementById("weightInput").value = "";
+        document.getElementById("weightInput").placeholder = "Enter Pounds...";
+
         for(let i = 0; i < allButtons.length; i++) {
             allButtons[i].classList.remove("active");
         }
@@ -100,7 +110,7 @@
 
 
     document.getElementById("output").style.visibility = "hidden";
-    document.getElementById("lbsInput").addEventListener("input", function(event) {
+    document.getElementById("weightInput").addEventListener("input", function(event) {
         document.getElementById("output").style.visibility = "visible";
         let lbs = event.target.value;
         document.getElementById("gramsOutput").innerHTML = lbs / 0.0022046;

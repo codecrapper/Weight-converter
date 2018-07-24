@@ -1,3 +1,3 @@
-# Simple weight converter (pounds to other weight types)
+# Simple weight converter 
 
-Tutorial by Brad Traversy (completed)
+With vanilla JS and bootstrap 4
